@@ -1,9 +1,13 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useNavigate, NavLink } from 'react-router-dom';
 import { isLoggingOut } from '../Actions/index';
-import 'nav.css';
+import './nav.css';
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleLogout = () => {
     setTimeout(() => {
       dispatch(isLoggingOut());
