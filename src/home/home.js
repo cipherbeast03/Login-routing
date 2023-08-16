@@ -1,8 +1,12 @@
 // HomePage.js
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink, Route, Routes } from 'react-router-dom';
 import { isLoggedIn, isLoggingOut } from '../Actions/index';
+import ProfilePage from '../profile/profile';
+import Navbar from '../Nav/nav';
+import PrivateRoutes from '../Routers/PrivateRoutes';
+
 import './home.css';
 
 const HomePage = () => {
@@ -11,13 +15,7 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    setTimeout(() => {
-      dispatch(isLoggingOut());
-      // store.subscribe(() => console.log(store.getState()));
-      navigate('/');
-    }, 2000);
-  };
+  
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -27,38 +25,7 @@ const HomePage = () => {
   }, []);
   return (
     <div className="home-container">
-      <nav className="navbar">
-        <div className="logo">
-          <img
-            src="https://www.google.com/recaptcha/about/images/timeline-enterprise@2x.png"
-            height="50px"
-            width="50px"
-          />
-        </div>
-        <ul className="nav-links">
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/about">About</a>
-          </li>
-          <li>
-            <a href="/services">Services</a>
-          </li>
-          <li>
-            <a href="/contact">Profile</a>
-          </li>
-          <li>
-            <button className="logout" onClick={handleLogout}>
-              <img
-                src="https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/logout-512.png"
-                height="25px"
-                width="25px"
-              />
-            </button>
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
       <div className="content">
         <h1>Welcome to My Website</h1>
         <table>
