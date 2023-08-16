@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 10px;
   width: 100%;
 }
 
@@ -27,4 +27,11 @@
 
 .nav-links li a:hover {
   color: #ff9900;
+}
+
+.logout {
+  background-color: #fff;
+  color: rgb(7, 75, 177)
+  margin: 0 5px 5px 0;
+  display: flex;
 }

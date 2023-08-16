@@ -17,6 +17,7 @@ export default function App() {
         <Route exact path="/" element={<LoginPage />} />
         <Route element={<PrivateRoutes />}>
           <Route path="/home" element={<HomePage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Route>
       </Routes>
     </div>
