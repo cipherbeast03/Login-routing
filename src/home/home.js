@@ -28,7 +28,13 @@ const HomePage = () => {
   return (
     <div className="home-container">
       <nav className="navbar">
-        <div className="logo">My Website</div>
+        <div className="logo">
+          <img
+            src="https://www.google.com/recaptcha/about/images/timeline-enterprise@2x.png"
+            height="50px"
+            width="50px"
+          />
+        </div>
         <ul className="nav-links">
           <li>
             <a href="/">Home</a>
