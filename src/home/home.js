@@ -2,8 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate, NavLink, Route, Routes } from 'react-router-dom';
-import { isLoggedIn, isLoggingOut } from '../Actions/index';
-import ProfilePage from '../profile/profile';
 import Navbar from '../Nav/nav';
 import PrivateRoutes from '../Routers/PrivateRoutes';
 
